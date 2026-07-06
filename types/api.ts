@@ -6,4 +6,5 @@ export interface ApiResponse<T = unknown> {
 
 export interface ChatResponse {
   content: string;
+  sessionId: string;
 }

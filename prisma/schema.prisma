@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Conversation {
+  id        String    @id @default(uuid()) @db.Uuid
+  sessionId String    @map("session_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  messages  Message[]
+
+  @@index([sessionId])
+  @@map("conversations")
+}
+
+model Message {
+  id             String       @id @default(uuid()) @db.Uuid
+  conversationId String       @map("conversation_id") @db.Uuid
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String       @db.Text
+  content        String       @db.Text
+  createdAt      DateTime     @default(now()) @map("created_at")
+
+  @@index([conversationId])
+  @@map("messages")
+}
+
+model LongTermMemory {
+  id        String   @id @default(uuid()) @db.Uuid
+  content   String   @db.Text
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("long_term_memories")
+}
+
+model DocumentChunk {
+  id        String   @id @default(uuid()) @db.Uuid
+  source    String   @db.Text
+  content   String   @db.Text
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([source])
+  @@map("document_chunks")
+}

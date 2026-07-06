@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import { ExternalLink, Code2 } from "lucide-react";
 import Reveal from "@/components/ui/reveal";
 import projectsData from "@/data/projects.json";
 
@@ -16,8 +17,6 @@ interface Project {
   title: string;
   stack: string[];
   desc: string;
-  impactLabel: string;
-  impact: string;
   images: ProjectImage[];
   demoUrl: string;
   githubUrl: string;
@@ -160,13 +159,15 @@ export default function Projects() {
                 ))}
               </div>
               <p className="p-desc">{project.desc}</p>
-              <div className="p-impact">
-                <span className="label">{project.impactLabel}</span>
-                <div className="val">{project.impact}</div>
-              </div>
               <div className="p-links">
-                <a href={project.demoUrl}>Live demo</a>
-                <a href={project.githubUrl}>GitHub</a>
+                <a href={project.demoUrl} className="p-link-icon" aria-label="Live demo">
+                  <ExternalLink size={15} />
+                  <span>Demo</span>
+                </a>
+                <a href={project.githubUrl} className="p-link-icon" aria-label="GitHub">
+                  <Code2 size={15} />
+                  <span>Code</span>
+                </a>
               </div>
             </div>
           </Reveal>

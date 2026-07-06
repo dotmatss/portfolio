@@ -4,14 +4,14 @@ import { useRef, useEffect } from "react";
 import { useChatStore } from "@/store/chat.store";
 
 export default function ChatWidget() {
-  const { isOpen, messages, input, isLoading, toggleChat, setInput, sendMessage } =
+  const { isOpen, messages, input, isLoading, isStreaming, toggleChat, setInput, sendMessage } =
     useChatStore();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isStreaming]);
 
   useEffect(() => {
     if (isOpen) inputRef.current?.focus();
@@ -53,10 +53,13 @@ export default function ChatWidget() {
                   }`}
                 >
                   {msg.content}
+                  {i === messages.length - 1 && isStreaming && msg.role === "assistant" && (
+                    <span className="inline-block w-[2px] h-[14px] bg-fg ml-0.5 animate-[blink_1s_step-end_infinite]" />
+                  )}
                 </div>
               </div>
             ))}
-            {isLoading && (
+            {isLoading && !isStreaming && (
               <div className="flex">
                 <div className="flex gap-1.5 py-3 px-4 bg-card border border-line">
                   <span className="w-1.5 h-1.5 rounded-full bg-muted animate-[chatdot_1.4s_ease-in-out_infinite]" />

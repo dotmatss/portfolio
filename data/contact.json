@@ -5,9 +5,9 @@
   "email": "jefferson@gmail.com",
   "emailLabel": "Email me →",
   "links": [
-    { "label": "GitHub", "url": "https://github.com/dotmatss" },
-    { "label": "LinkedIn", "url": "#" },
-    { "label": "Twitter / X", "url": "#" },
-    { "label": "Resume (PDF)", "url": "#" }
+    { "label": "GitHub", "url": "https://github.com/dotmatss", "icon": "github" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/in/jeffersonaalaiza", "icon": "linkedin" },
+    { "label": "Twitter / X", "url": "https://x.com/dotmatss", "icon": "twitter" },
+    { "label": "Resume", "url": "/dot_resume.pdf", "icon": "resume" }
   ]
 }

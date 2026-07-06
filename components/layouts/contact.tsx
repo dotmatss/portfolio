@@ -1,7 +1,15 @@
 "use client";
 
+import { Code2, Globe, Link, FileText } from "lucide-react";
 import Reveal from "@/components/ui/reveal";
 import contactData from "@/data/contact.json";
+
+const iconMap: Record<string, React.ReactNode> = {
+  github: <Code2 size={14} />,
+  linkedin: <Globe size={14} />,
+  twitter: <Link size={14} />,
+  resume: <FileText size={14} />,
+};
 
 export default function Contact() {
   return (
@@ -34,7 +42,10 @@ export default function Contact() {
       <Reveal delay={0.32}>
         <div className="contact-links">
           {contactData.links.map((l) => (
-            <a key={l.label} href={l.url}>{l.label}</a>
+            <a key={l.label} href={l.url} className="contact-link-icon" target="_blank" rel="noopener noreferrer">
+              {iconMap[l.icon]}
+              <span>{l.label}</span>
+            </a>
           ))}
         </div>
       </Reveal>

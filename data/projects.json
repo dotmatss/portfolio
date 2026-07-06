@@ -4,8 +4,6 @@
     "title": "HCP Rx — Healthcare Practitioner Chatbot",
     "stack": ["LangGraph", "FastAPI", "Redis", "Qdrant", "OpenAI Embeddings", "OracleDB", "Angular"],
     "desc": "Developed a medical chatbot for USA healthcare practitioners using LangGraph and FastAPI to handle multi-turn AI workflows and decision-making. Implemented a memory system using Redis for short-term and long-term conversation retention.",
-    "impactLabel": "TECHNOLOGY",
-    "impact": "Integrated Qdrant Vector Database with OpenAI Embeddings for document retrieval alongside OracleDB for structured data.",
     "images": [
       { "src": "/projects/hcp-rx-1.svg", "alt": "Chatbot interface" },
       { "src": "/projects/hcp-rx-2.svg", "alt": "Memory system diagram" }
@@ -19,8 +17,6 @@
     "title": "Adhikademy — AI LMS Application",
     "stack": ["OpenAI API", "Vector Embeddings", "PostgreSQL", "AWS S3"],
     "desc": "Built a Learning Management System (LMS) featuring a course assistant chatbot powered by the OpenAI API and vector embeddings in PostgreSQL. Capstone project demonstrating full-stack AI integration.",
-    "impactLabel": "CAPSTONE PROJECT",
-    "impact": "Configured file storage pipelines using AWS S3 to manage and secure learning materials and assets.",
     "images": [
       { "src": "/projects/adhikademy-1.svg", "alt": "LMS dashboard" },
       { "src": "/projects/adhikademy-2.svg", "alt": "Chatbot interface" }
@@ -34,8 +30,6 @@
     "title": "LYDO Mariveles — Youth Development Platform",
     "stack": ["Laravel", "React", "Google Gemini API", "Google Forms"],
     "desc": "Created a community platform for the Local Youth Development Office using a Laravel backend and a React frontend. Integrated the Google Gemini API to automatically analyze feedback and responses collected from Google Forms.",
-    "impactLabel": "AI INTEGRATION",
-    "impact": "Automated feedback analysis for a local government youth office, reducing manual review time.",
     "images": [
       { "src": "/projects/lydo-1.svg", "alt": "Platform homepage" },
       { "src": "/projects/lydo-2.svg", "alt": "AI analysis dashboard" }
