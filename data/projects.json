@@ -1,32 +1,47 @@
 [
   {
     "index": "P-01",
-    "title": "Atlas — Multi-Agent Research System",
-    "stack": ["Claude API", "LangGraph", "RAG", "Python"],
-    "desc": "Orchestrates specialized research and synthesis agents, each with a narrow scope, to turn broad research questions into cited, structured reports — reducing analyst research time significantly.",
-    "impactLabel": "ARCHITECTURE",
-    "impact": "Planner agent → parallel researcher agents → critic agent → synthesis, with a shared vector store for grounding.",
+    "title": "HCP Rx — Healthcare Practitioner Chatbot",
+    "stack": ["LangGraph", "FastAPI", "Redis", "Qdrant", "OpenAI Embeddings", "OracleDB", "Angular"],
+    "desc": "Developed a medical chatbot for USA healthcare practitioners using LangGraph and FastAPI to handle multi-turn AI workflows and decision-making. Implemented a memory system using Redis for short-term and long-term conversation retention.",
+    "impactLabel": "TECHNOLOGY",
+    "impact": "Integrated Qdrant Vector Database with OpenAI Embeddings for document retrieval alongside OracleDB for structured data.",
+    "images": [
+      { "src": "/projects/hcp-rx-1.svg", "alt": "Chatbot interface" },
+      { "src": "/projects/hcp-rx-2.svg", "alt": "Memory system diagram" }
+    ],
     "demoUrl": "#",
-    "githubUrl": "#"
+    "githubUrl": "#",
+    "year": "2026"
   },
   {
     "index": "P-02",
-    "title": "Ledger — Enterprise Knowledge Assistant",
-    "stack": ["RAG", "FastAPI", "PostgreSQL", "Next.js"],
-    "desc": "An internal assistant that answers employee questions from scattered internal documentation, with source citations on every answer and role-based access to sensitive material.",
-    "impactLabel": "BUSINESS IMPACT",
-    "impact": "Cut average time-to-answer for internal support questions from hours to under a minute.",
+    "title": "Adhikademy — AI LMS Application",
+    "stack": ["OpenAI API", "Vector Embeddings", "PostgreSQL", "AWS S3"],
+    "desc": "Built a Learning Management System (LMS) featuring a course assistant chatbot powered by the OpenAI API and vector embeddings in PostgreSQL. Capstone project demonstrating full-stack AI integration.",
+    "impactLabel": "CAPSTONE PROJECT",
+    "impact": "Configured file storage pipelines using AWS S3 to manage and secure learning materials and assets.",
+    "images": [
+      { "src": "/projects/adhikademy-1.svg", "alt": "LMS dashboard" },
+      { "src": "/projects/adhikademy-2.svg", "alt": "Chatbot interface" }
+    ],
     "demoUrl": "#",
-    "githubUrl": "#"
+    "githubUrl": "#",
+    "year": "2025"
   },
   {
     "index": "P-03",
-    "title": "Flowline — Automation Suite",
-    "stack": ["n8n", "Node.js", "Webhooks", "Custom Nodes"],
-    "desc": "A set of custom n8n nodes and workflows connecting CRM, email, and AI reasoning steps to automate lead qualification and follow-up for a small sales team.",
-    "impactLabel": "BUSINESS IMPACT",
-    "impact": "Automated a manual, multi-tool daily task down to a single triggered workflow.",
+    "title": "LYDO Mariveles — Youth Development Platform",
+    "stack": ["Laravel", "React", "Google Gemini API", "Google Forms"],
+    "desc": "Created a community platform for the Local Youth Development Office using a Laravel backend and a React frontend. Integrated the Google Gemini API to automatically analyze feedback and responses collected from Google Forms.",
+    "impactLabel": "AI INTEGRATION",
+    "impact": "Automated feedback analysis for a local government youth office, reducing manual review time.",
+    "images": [
+      { "src": "/projects/lydo-1.svg", "alt": "Platform homepage" },
+      { "src": "/projects/lydo-2.svg", "alt": "AI analysis dashboard" }
+    ],
     "demoUrl": "#",
-    "githubUrl": "#"
+    "githubUrl": "#",
+    "year": "2024"
   }
 ]
