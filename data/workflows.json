@@ -1,0 +1,126 @@
+[
+  {
+    "id": "rag",
+    "label": "RAG Pipeline",
+    "desc": "Retrieval-Augmented Generation — grounding LLM responses in real documents.",
+    "nodes": [
+      { "id": "docs", "label": "Documents", "type": "input" },
+      { "id": "chunk", "label": "Chunking", "type": "process" },
+      { "id": "embed", "label": "Embeddings", "type": "process" },
+      { "id": "vectordb", "label": "Vector DB", "type": "storage" },
+      { "id": "query", "label": "Query", "type": "input" },
+      { "id": "retrieve", "label": "Retrieve", "type": "process" },
+      { "id": "llm", "label": "LLM", "type": "ai" },
+      { "id": "response", "label": "Response", "type": "output" }
+    ],
+    "edges": [
+      { "from": "docs", "to": "chunk" },
+      { "from": "docs", "to": "embed" },
+      { "from": "chunk", "to": "vectordb" },
+      { "from": "embed", "to": "vectordb" },
+      { "from": "vectordb", "to": "retrieve" },
+      { "from": "query", "to": "retrieve" },
+      { "from": "retrieve", "to": "llm" },
+      { "from": "llm", "to": "response" }
+    ]
+  },
+  {
+    "id": "agent",
+    "label": "Multi-Agent System",
+    "desc": "Orchestrated agents with specialized roles, routed by a central coordinator.",
+    "nodes": [
+      { "id": "task", "label": "Task", "type": "input" },
+      { "id": "router", "label": "Router", "type": "ai" },
+      { "id": "research", "label": "Research", "type": "process" },
+      { "id": "coder", "label": "Coder", "type": "process" },
+      { "id": "writer", "label": "Writer", "type": "process" },
+      { "id": "critic", "label": "Critic", "type": "ai" },
+      { "id": "result", "label": "Result", "type": "output" }
+    ],
+    "edges": [
+      { "from": "task", "to": "router" },
+      { "from": "router", "to": "research" },
+      { "from": "router", "to": "coder" },
+      { "from": "router", "to": "writer" },
+      { "from": "research", "to": "critic" },
+      { "from": "coder", "to": "critic" },
+      { "from": "writer", "to": "critic" },
+      { "from": "critic", "to": "result" }
+    ]
+  },
+  {
+    "id": "agentic",
+    "label": "Agentic AI",
+    "desc": "Autonomous agents with human-in-the-loop validation and Redis-cached memory for persistent context.",
+    "nodes": [
+      { "id": "input", "label": "User Input", "type": "input" },
+      { "id": "agent", "label": "Agent", "type": "ai" },
+      { "id": "plan", "label": "Plan", "type": "process" },
+      { "id": "execute", "label": "Execute", "type": "process" },
+      { "id": "validate", "label": "Human Review", "type": "ai" },
+      { "id": "auto", "label": "Auto-Approve", "type": "process" },
+      { "id": "redis", "label": "Redis Cache", "type": "storage" },
+      { "id": "memory", "label": "Memory", "type": "storage" },
+      { "id": "output", "label": "Response", "type": "output" }
+    ],
+    "edges": [
+      { "from": "input", "to": "agent" },
+      { "from": "agent", "to": "plan" },
+      { "from": "plan", "to": "execute" },
+      { "from": "execute", "to": "validate" },
+      { "from": "execute", "to": "auto" },
+      { "from": "validate", "to": "redis" },
+      { "from": "auto", "to": "redis" },
+      { "from": "redis", "to": "memory" },
+      { "from": "redis", "to": "output" }
+    ]
+  },
+  {
+    "id": "automation",
+    "label": "Automation Flow",
+    "desc": "Event-driven pipelines connecting triggers, AI reasoning, and external systems.",
+    "nodes": [
+      { "id": "trigger", "label": "Trigger", "type": "input" },
+      { "id": "webhook", "label": "Webhook", "type": "process" },
+      { "id": "parse", "label": "Parse", "type": "process" },
+      { "id": "classify", "label": "AI Classify", "type": "ai" },
+      { "id": "route", "label": "Route", "type": "process" },
+      { "id": "crm", "label": "CRM", "type": "storage" },
+      { "id": "email", "label": "Email", "type": "output" }
+    ],
+    "edges": [
+      { "from": "trigger", "to": "webhook" },
+      { "from": "webhook", "to": "parse" },
+      { "from": "webhook", "to": "classify" },
+      { "from": "parse", "to": "route" },
+      { "from": "classify", "to": "route" },
+      { "from": "route", "to": "crm" },
+      { "from": "route", "to": "email" }
+    ]
+  },
+  {
+    "id": "hybrid",
+    "label": "LangGraph + N8N",
+    "desc": "Hybrid approach — N8N handles triggers and integrations, LangGraph manages AI reasoning and agent orchestration.",
+    "nodes": [
+      { "id": "trigger", "label": "Trigger", "type": "input" },
+      { "id": "n8n", "label": "N8N Webhook", "type": "process" },
+      { "id": "agent", "label": "LangGraph Agent", "type": "ai" },
+      { "id": "route", "label": "Conditional Route", "type": "ai" },
+      { "id": "api", "label": "External API", "type": "process" },
+      { "id": "db", "label": "Database", "type": "storage" },
+      { "id": "callback", "label": "N8N Callback", "type": "process" },
+      { "id": "response", "label": "Response", "type": "output" }
+    ],
+    "edges": [
+      { "from": "trigger", "to": "n8n" },
+      { "from": "n8n", "to": "agent" },
+      { "from": "agent", "to": "route" },
+      { "from": "route", "to": "api" },
+      { "from": "route", "to": "db" },
+      { "from": "api", "to": "callback" },
+      { "from": "db", "to": "callback" },
+      { "from": "callback", "to": "response" }
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "eyebrow": "About",
+  "heading": "Building like a Stoic. Shipping like an engineer.",
+  "paragraphs": [
+    "Stoicism draws a hard line between what you control and what you don't. Engineering, done well, follows the same rule. <strong>You control the architecture, the tests, the honesty of your claims</strong> — not the messiness of the data, the shifting requirements, or the noise around AI hype.",
+    "I build software and AI systems for businesses that need things to actually work: agents that complete real tasks, retrieval systems that answer with grounded facts, automations that remove hours of repetitive work. No theatrics — just systems built with intention, tested with discipline, and shipped with clarity about what they do and don't do.",
+    "Every project starts with the same question: what is this system's one job, and how do we do it with the least possible complexity?"
+  ]
+}

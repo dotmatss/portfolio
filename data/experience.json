@@ -1,0 +1,27 @@
+[
+  {
+    "date": "Jul 2025 — Present",
+    "title": "Associate Software Developer · Thrive Dynamic Business Solutions, Inc.",
+    "desc": "Full-time on-site role building LLM-powered applications and REST APIs. Contributing to AI integration and backend systems for business operations."
+  },
+  {
+    "date": "Apr 2025 — Present",
+    "title": "Software Developer · QPharma, Inc.",
+    "desc": "Contract remote role developing and maintaining software systems for pharmaceutical operations. Building reliable, production-grade applications and contributing to full-stack development workflows."
+  },
+  {
+    "date": "Apr 2025 — Jul 2025",
+    "title": "Back End Developer · Thrive Dynamic Business Solutions, Inc.",
+    "desc": "Internship building backend services with Python and FastAPI. Gained hands-on experience in API development and system architecture."
+  },
+  {
+    "date": "Oct 2021 — Dec 2023",
+    "title": "Android Developer · Tcodes",
+    "desc": "Freelance remote role building Android applications using Kotlin and Android Jetpack. Delivered mobile solutions for various clients."
+  },
+  {
+    "date": "Apr 2023 — Jul 2023",
+    "title": "Laravel Developer · Quantum Rise",
+    "desc": "Part-time remote role developing web applications with PHP, Laravel, and Vue.js. Built and maintained client-facing features."
+  }
+]

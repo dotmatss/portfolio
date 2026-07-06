@@ -1,0 +1,32 @@
+[
+  {
+    "index": "P-01",
+    "title": "Atlas — Multi-Agent Research System",
+    "stack": ["Claude API", "LangGraph", "RAG", "Python"],
+    "desc": "Orchestrates specialized research and synthesis agents, each with a narrow scope, to turn broad research questions into cited, structured reports — reducing analyst research time significantly.",
+    "impactLabel": "ARCHITECTURE",
+    "impact": "Planner agent → parallel researcher agents → critic agent → synthesis, with a shared vector store for grounding.",
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "index": "P-02",
+    "title": "Ledger — Enterprise Knowledge Assistant",
+    "stack": ["RAG", "FastAPI", "PostgreSQL", "Next.js"],
+    "desc": "An internal assistant that answers employee questions from scattered internal documentation, with source citations on every answer and role-based access to sensitive material.",
+    "impactLabel": "BUSINESS IMPACT",
+    "impact": "Cut average time-to-answer for internal support questions from hours to under a minute.",
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "index": "P-03",
+    "title": "Flowline — Automation Suite",
+    "stack": ["n8n", "Node.js", "Webhooks", "Custom Nodes"],
+    "desc": "A set of custom n8n nodes and workflows connecting CRM, email, and AI reasoning steps to automate lead qualification and follow-up for a small sales team.",
+    "impactLabel": "BUSINESS IMPACT",
+    "impact": "Automated a manual, multi-tool daily task down to a single triggered workflow.",
+    "demoUrl": "#",
+    "githubUrl": "#"
+  }
+]

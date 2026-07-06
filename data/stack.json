@@ -1,0 +1,8 @@
+[
+  { "name": "AI", "items": ["Claude / OpenAI APIs", "LangChain / LangGraph", "Vector Databases", "MCP"] },
+  { "name": "Backend", "items": ["Node.js / Python", "FastAPI", "PostgreSQL", "REST / GraphQL"] },
+  { "name": "Frontend", "items": ["Next.js / React", "TypeScript", "Tailwind CSS", "Framer Motion"] },
+  { "name": "Automation", "items": ["n8n", "Make", "Zapier"] },
+  { "name": "Cloud", "items": ["AWS", "Docker", "Vercel"] },
+  { "name": "DevOps", "items": ["Git / CI-CD", "Monitoring", "Testing"] }
+]

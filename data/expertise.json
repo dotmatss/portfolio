@@ -1,0 +1,11 @@
+[
+  { "tag": "AI SYSTEMS", "title": "LLM Applications & RAG", "desc": "Retrieval-augmented pipelines and grounded LLM applications that answer from real data, not guesswork." },
+  { "tag": "AI SYSTEMS", "title": "Agents & Multi-Agent Systems", "desc": "Autonomous and orchestrated agents built with MCP and tool-use patterns, designed to complete real tasks reliably." },
+  { "tag": "AI SYSTEMS", "title": "Fine-Tuning", "desc": "Adapting open and closed models to domain-specific behavior where prompting alone isn't enough." },
+  { "tag": "AUTOMATION", "title": "AI & Workflow Automation", "desc": "Custom automations connecting AI reasoning to business systems — reducing manual, repetitive work." },
+  { "tag": "AUTOMATION", "title": "No-Code Orchestration", "desc": "n8n, Make, and Zapier workflows for teams that need automation without a full engineering build." },
+  { "tag": "ENGINEERING", "title": "Backend & API Development", "desc": "Clean, well-tested services and APIs that are built to be understood a year from now, not just today." },
+  { "tag": "ENGINEERING", "title": "Full-Stack Development", "desc": "End-to-end product builds — from database schema to the interface someone actually uses." },
+  { "tag": "ENGINEERING", "title": "AI-Powered Applications", "desc": "Product experiences with AI woven into the core workflow, not bolted on as a chat widget." },
+  { "tag": "DEPLOYMENT", "title": "Cloud & Infrastructure", "desc": "Deploying and monitoring systems so they stay reliable well after the demo is over." }
+]
