@@ -261,13 +261,25 @@ h1.headline em {
   border: 1px solid var(--line-strong);
   padding: 14px;
   background: var(--card);
-}
-.portrait-frame img {
-  width: 100%;
-  display: block;
-  filter: grayscale(1) contrast(1.05);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+}
+.dot-img {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
+  object-fit: contain;
+  transition: opacity 0.4s var(--ease);
+}
+.dot-hover {
+  opacity: 0;
+}
+.portrait-hover:hover .dot-default {
+  opacity: 0;
+}
+.portrait-hover:hover .dot-hover {
+  opacity: 1;
 }
 .portrait-tag {
   position: absolute;

@@ -4,8 +4,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Reveal from "@/components/ui/reveal";
-import profilePhoto from "@/public/profile.jpg";
 import heroData from "@/data/hero.json";
+import dotDefault from "@/public/dot_default.png";
+import dotHover from "@/public/dot_hover.png";
 
 function ParallaxShapes() {
   const shouldReduceMotion = useReducedMotion();
@@ -114,10 +115,11 @@ export default function Hero() {
 
         <Reveal delay={0.16} className="portrait-wrap">
           <motion.div ref={portraitRef} style={{ y: portraitY }}>
-            <div className="portrait-frame">
+            <div className="portrait-frame portrait-hover">
               <div className="corner tl" />
               <div className="corner br" />
-              <Image src={profilePhoto} alt="Portrait" priority />
+              <Image src={dotDefault} alt="dotmatss" fill className="dot-img dot-default" priority />
+              <Image src={dotHover} alt="dotmatss" fill className="dot-img dot-hover" priority />
             </div>
             <div className="portrait-tag">{heroData.portraitTag}</div>
           </motion.div>
