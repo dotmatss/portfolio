@@ -41,17 +41,23 @@ export async function handleChatStream(req: Request): Promise<Response> {
     const stream = new ReadableStream({
       async start(controller) {
         try {
-          for await (const chunk of chatService.stream({ messages, sessionId })) {
+          for await (const chunk of chatService.stream({
+            messages,
+            sessionId,
+          })) {
             controller.enqueue(
-              encoder.encode(`data: ${JSON.stringify(chunk)}\n\n`)
+              encoder.encode(`data: ${JSON.stringify(chunk)}\n\n`),
             );
           }
           controller.close();
         } catch (error) {
+          const message =
+            error instanceof Error ? error.message : "Stream failed";
+          console.error("Chat stream failed:", error);
           controller.enqueue(
             encoder.encode(
-              `data: ${JSON.stringify({ type: "error", error: "Stream failed" })}\n\n`
-            )
+              `data: ${JSON.stringify({ type: "error", error: message })}\n\n`,
+            ),
           );
           controller.close();
         }
@@ -60,7 +66,7 @@ export async function handleChatStream(req: Request): Promise<Response> {
 
     return new Response(stream, {
       headers: {
-        "Content-Type": "text/event-stream",
+        "Content-Type": "text/event-stream; charset=utf-8",
         "Cache-Control": "no-cache",
         Connection: "keep-alive",
       },

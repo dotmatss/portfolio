@@ -1,16 +1,30 @@
 import { ChatOpenAI } from "@langchain/openai";
-import { HumanMessage, SystemMessage, BaseMessage } from "@langchain/core/messages";
+import {
+  HumanMessage,
+  SystemMessage,
+  BaseMessage,
+} from "@langchain/core/messages";
 import { GraphStateType } from "../state";
 
+const openRouterApiKey = process.env.OPENROUTER_API_KEY;
+const openRouterChatModel =
+  process.env.OPENROUTER_CHAT_MODEL ?? "nvidia/nemotron-3-ultra-550b-a55b:free";
+
+if (!openRouterApiKey || openRouterApiKey === "your_openrouter_api_key_here") {
+  throw new Error(
+    "OPENROUTER_API_KEY is missing. Set a real OpenRouter API key in .env.local.",
+  );
+}
+
 const model = new ChatOpenAI({
-  modelName: "google/gemini-2.0-flash-001",
+  modelName: openRouterChatModel,
   temperature: 0.7,
   maxTokens: 1024,
   streaming: true,
   configuration: {
     baseURL: "https://openrouter.ai/api/v1",
   },
-  apiKey: process.env.OPENROUTER_API_KEY,
+  apiKey: openRouterApiKey,
 });
 
 const SYSTEM_PROMPT = `You are a helpful AI assistant on a personal portfolio website for a Software & AI Engineer named Jefferson.
@@ -28,20 +42,19 @@ function buildPrompt(state: GraphStateType): BaseMessage[] {
     const contextBlock = state.context
       .map((r) => `[Source: ${r.source}] ${r.content}`)
       .join("\n\n");
-    messages.push(
-      new SystemMessage(`Relevant context:\n${contextBlock}`)
-    );
+    messages.push(new SystemMessage(`Relevant context:\n${contextBlock}`));
   }
 
   if (state.memories.length > 0) {
     const memoryBlock = state.memories.join("\n");
-    messages.push(
-      new SystemMessage(`Conversation memories:\n${memoryBlock}`)
-    );
+    messages.push(new SystemMessage(`Conversation memories:\n${memoryBlock}`));
   }
 
   for (const msg of state.messages) {
-    if (msg instanceof HumanMessage || msg.constructor.name === "HumanMessage") {
+    if (
+      msg instanceof HumanMessage ||
+      msg.constructor.name === "HumanMessage"
+    ) {
       messages.push(new HumanMessage(msg.content as string));
     }
   }
